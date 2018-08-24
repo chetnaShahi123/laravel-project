@@ -14,3 +14,34 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+// $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::group(['prefix' => 'admin',  'middleware' => 'UrlAuthentication'], function()
+// {
+//     Route::get('/', 'HomeController@index' );
+
+//     Route::get('dashboard', function() {} );
+
+// });
+
+// Route::resource('users', 'UserController');
+
+Route::group(['middleware' => 'UrlAuthentication'], function()
+{
+    Route::resource('users', 'UserController');
+
+    Route::get('users/create/{roleName}','UserController@create');
+
+    // Route::get('users/edit/{roleName}','UserController@edit');
+});
+Route::get('/401', function(){
+    return view('401');
+})->name('401');
+
+// Gate::resource('users', 'UserPolicy', [
+//     'is_allowed_to_add_roles' => 'check_add_permission',
+// ]);

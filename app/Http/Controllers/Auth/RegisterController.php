@@ -51,6 +51,8 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'skill' => 'required|string|max:255',
+            'hobbies' => 'required|string|max:255',
         ]);
     }
 
@@ -62,10 +64,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $viewer =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone_no' => $data['phone_no'],
+            'skill' => $data['skill'],
+            'hobbies' => $data['hobbies'],
             'password' => bcrypt($data['password']),
         ]);
+
+         $viewer->roles()->attach([4]); //as viewer only have permission to register
+         return $viewer;
     }
 }

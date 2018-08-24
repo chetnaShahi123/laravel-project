@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+Use App\Models\Role;
+// Use App\Models\Admin;
+// Use App\Models\Manager;
+// Use App\Models\Viewer;
 
 class User extends Authenticatable
 {
@@ -26,4 +30,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function roles() {
+        return $this->belongsToMany(Role::class)->withTimeStamps();
+    }
+
+    // public function admin(){
+    //     return $this->hasOne(Admin::class, 'user_email', 'email');
+    // }
+
 }
