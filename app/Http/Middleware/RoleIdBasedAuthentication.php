@@ -45,8 +45,8 @@ class RoleIdBasedAuthentication
         if($allowed == true) {
             return $next($request);
         }
-        else {
-            return redirect()->route('401');
+        else { die("fgfg");
+            return redirect()->route('404');
         }
        // echo $request->route()->url();die;
        // return $next($request);

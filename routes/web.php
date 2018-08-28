@@ -38,9 +38,9 @@ Route::group(['middleware' => 'UrlAuthentication'], function()
 
     // Route::get('users/edit/{roleName}','UserController@edit');
 });
-Route::get('/401', function(){
-    return view('401');
-})->name('401');
+Route::get('/404', function(){
+    return view('errors/404');
+})->name('404');
 
 // Gate::resource('users', 'UserPolicy', [
 //     'is_allowed_to_add_roles' => 'check_add_permission',

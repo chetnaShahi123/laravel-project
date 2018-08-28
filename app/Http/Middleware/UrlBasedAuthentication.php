@@ -33,7 +33,7 @@ class UrlBasedAuthentication
             return $next($request);
         }
         else {
-            return redirect()->route('401');
+            return redirect()->route('404');
         }
     }
 }
