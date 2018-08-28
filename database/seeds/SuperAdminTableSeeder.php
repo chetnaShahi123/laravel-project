@@ -12,7 +12,6 @@ class SuperAdminTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         $user = new User;
         $user->name = 'Chetna Shahi';
         $user->email = 'chetna.shahi@netsolutions.com';

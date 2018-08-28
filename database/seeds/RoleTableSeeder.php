@@ -12,7 +12,6 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         $roles = [
             'SUPER-ADMIN',
             'ADMIN',

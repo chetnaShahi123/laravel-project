@@ -28,7 +28,6 @@ class PermissionTableSeeder extends Seeder
             'VIEWER-DELETE',
         ];
         foreach ($permissions as $permission) {
-           // $permission_instance = new Permission;
             Permission::create(['permission' => $permission]);
        }
 

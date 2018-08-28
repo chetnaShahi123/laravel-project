@@ -19,7 +19,6 @@ class AlterUsersTable extends Migration
             $table->string('skill')->after("phone_no");
             $table->string('hobbies')->after("skill");
             $table->string('address')->after("hobbies");
-            //
         });
     }
 
@@ -36,7 +35,6 @@ class AlterUsersTable extends Migration
             $table->dropColumn('skill');
             $table->dropColumn('hobbies');
             $table->dropColumn('address');
-            //
         });
     }
 }

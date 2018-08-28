@@ -35,8 +35,5 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class)->withTimeStamps();
     }
 
-    // public function admin(){
-    //     return $this->hasOne(Admin::class, 'user_email', 'email');
-    // }
 
 }

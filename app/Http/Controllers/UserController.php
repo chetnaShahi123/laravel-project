@@ -22,12 +22,6 @@ class UserController extends Controller
      */
     public function index()
     {
-       // die("fgfg");//
-        // $users = User::all(); 
-
-        // $super_admin_role = Role::where('role', 'SUPER-ADMIN')->first();
-        // $super_admin_role->pivot;
-        //     echo"<pre>";print_r($super_admin_role->pivot);die;
         $viewer_users = Role::where('role', 'VIEWER')->first()->users;
         $admin_users = Role::where('role', 'ADMIN')->first()->users;
         $manager_users = Role::where('role', 'MANAGER')->first()->users;
@@ -43,10 +37,8 @@ class UserController extends Controller
      */
     public function create($roleName)
     {
-        // $roleId = Role::where('role', $roleName)->first()->id; 
-        // return view('users.create')->with('role_id', $roleId);//
         $roleInstance = Role::where('role', $roleName)->first();
-        return view('users.create')->with(compact('roleInstance'));//
+        return view('users.create')->with(compact('roleInstance'));
     }
     //compact('tasks')
     /**
@@ -69,9 +61,7 @@ class UserController extends Controller
 
         $user->roles()->attach([$request->get('role_id')]);
       
-        //Session::flash('flash_message', 'User successfully added!');
         return redirect('users')->with('success', $user->name.' added successfully!');
-       // return back();
 
     }
 
@@ -83,7 +73,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     { 
-        return view('users.show', array('user' => $user)); //
+        return view('users.show', array('user' => $user)); 
     }
 
     /**
@@ -94,7 +84,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     { 
-        return view('users.edit', array('user' => $user)); //
+        return view('users.edit', array('user' => $user)); 
     }
 
     /**
@@ -111,8 +101,7 @@ class UserController extends Controller
         $user->phone_no = $request->get('phone_no');
 
         $user->save();
-        //Session::flash('flash_message', 'Car successfully updated!');
-      //return redirect()->back();
+     
       return redirect('users')->with('success', $user->name.' updated successfully!');
     }
 
@@ -128,9 +117,8 @@ class UserController extends Controller
         $user_name = $user->name;
         $roleName = $user->roles->first()->role;
         $workingTabId = $_POST['working_tab'];
-        User::destroy($id);//
-        //Session::flash('flash_message', 'User successfully deleted!');
-        //return redirect('users')->with('success', $roleName.' ' .$user_name.' deleted successfully!'); //
+        User::destroy($id);
+
         return back()->withInput(['tab'=>$workingTabId])->with('success', $roleName.' ' .$user_name.' deleted successfully!');
     }
 }

@@ -1,11 +1,4 @@
-<!-- <head>
-<meta charset="utf-8">
-<meta name="description" content="">
-<meta name="author" content="Scotch">
-<title>Car</title> -->
- <!-- CSRF Token -->
- <!-- <meta name="csrf-token" content="{{ csrf_token() }}">
-</head> -->
+
 @extends('layouts.app')
 
 @section('content')

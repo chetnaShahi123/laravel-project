@@ -21,23 +21,6 @@
           <a href="" target="_blank"><img alt="google play store" src="https://www.solodev.com/assets/footer/androidstore.png"></a>
         </div>
         <div class="col-sm-6 col-md-3">
-          <!-- <ul class="ct-socials list-unstyled list-inline">
-            <li>
-              <a href="" target="_blank"><img alt="facebook" src="https://www.solodev.com/assets/footer/facebook-white.png"></a>
-            </li>
-            <li>
-              <a href="" target="_blank"><img alt="twitter" src="https://www.solodev.com/assets/footer/twitter-white.png"></a>
-            </li>
-            <li>
-              <a href="" target="_blank"><img alt="youtube" src="https://www.solodev.com/assets/footer/youtube-white.png"></a>
-            </li>
-            <li>
-              <a href="" target="_blank"><img alt="instagram" src="https://www.solodev.com/assets/footer/instagram-white.png"></a>
-            </li>
-            <li>
-              <a href="" target="_blank"><img alt="pinterest" src="https://www.solodev.com/assets/footer/pinterest-white.png"></a>
-            </li>
-          </ul> -->
         </div>
       </div>
     </div>

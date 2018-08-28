@@ -12,7 +12,6 @@ class PermissionRoleTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         $super_admin = Role::find(1);
         $super_admin->permissions()->attach([1,2,3,4,5,6,7,8,9,10,11,12]); //attach specific to many to many
 
