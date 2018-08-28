@@ -5,7 +5,7 @@
   <form class="form-horizontal" method="POST" action="{{action('UserController@update', $user->id) }}" >
   <input type="hidden" name="_method" value="PUT">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-  <h1>User {{ $user->id }}</h1>
+  <h1 class="edit_heading">User {{ $user->id }}</h1></br>
 
 
     <div  class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -33,7 +33,8 @@
         <div class="col-md-6"> 
         <input type="password" value='{{ $user->password }}' id="password" name="password" class="form-control"/>
         </div>    
-    </div>
+    </div></br>
+ 
     <div class="form-group">
         <div class="col-md-8 col-md-offset-4">
             <button type="submit" class="btn btn-primary">
@@ -42,6 +43,7 @@
 
         </div>
     </div>
+
 
 </form>
 </div>

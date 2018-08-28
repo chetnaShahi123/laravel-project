@@ -30,6 +30,13 @@
   padding: 20px;
   margin-bottom: 8px;
 }
+.edit_heading {
+  text-align: center;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px plum;
+  width:5;
+}
 
 html,
 body,
