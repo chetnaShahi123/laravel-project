@@ -34,7 +34,7 @@ Route::group(['middleware' => 'UrlAuthentication'], function()
 {
     Route::resource('users', 'UserController');
 
-    Route::get('users/create/{roleName}','UserController@create');
+    Route::get('users/create/{roleName}','UserController@create')->middleware('UrlBasedAuthentication');
 
     // Route::get('users/edit/{roleName}','UserController@edit');
 });

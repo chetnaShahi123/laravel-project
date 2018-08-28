@@ -10,3 +10,4 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href=" {{ URL::asset('css/user_management.css') }}" rel="stylesheet">
+    <link href=" {{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">

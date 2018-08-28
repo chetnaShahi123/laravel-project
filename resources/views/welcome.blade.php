@@ -19,6 +19,9 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+                background-image: url("{{ asset('images/banner.jpg') }}");
+                background-repeat: no-repeat;
+                background-size: cover;
             }
 
             .full-height {
@@ -61,6 +64,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+               font-weight: bold;
             }
         </style>
     </head>
@@ -69,7 +73,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/users') }}">Home</a>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
@@ -78,7 +82,7 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title m-b-md user_mang_heading">
                    Users Management
                 </div>
 

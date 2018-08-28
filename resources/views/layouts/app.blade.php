@@ -5,16 +5,18 @@
 </head>
 <body>
     <div id="app">
+ 
         
         @include('includes.header')
         @include('flash-message')
         @yield('content')
 
-
-         
+         @include('includes.footer')
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    
 </body>
 </html>
