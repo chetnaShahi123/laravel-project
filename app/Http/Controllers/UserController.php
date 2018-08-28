@@ -62,6 +62,7 @@ class UserController extends Controller
         $user->name = $_POST['name'];
         $user->email = $request->get('email');
         $user->password = bcrypt($request->get('password'));
+        $workingTabId = $request->get('working_tab');
         $user->save();
 
         $user_id = $user->id;
@@ -70,6 +71,7 @@ class UserController extends Controller
       
         //Session::flash('flash_message', 'User successfully added!');
         return redirect('users')->with('success', $user->name.' added successfully!');
+       // return back();
 
     }
 
@@ -121,12 +123,14 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
+    { 
         $user = User::find($id);
         $user_name = $user->name;
         $roleName = $user->roles->first()->role;
+        $workingTabId = $_POST['working_tab'];
         User::destroy($id);//
         //Session::flash('flash_message', 'User successfully deleted!');
-        return redirect('users')->with('success', $roleName.' ' .$user_name.' deleted successfully!');; //
+        //return redirect('users')->with('success', $roleName.' ' .$user_name.' deleted successfully!'); //
+        return back()->withInput(['tab'=>$workingTabId])->with('success', $roleName.' ' .$user_name.' deleted successfully!');
     }
 }

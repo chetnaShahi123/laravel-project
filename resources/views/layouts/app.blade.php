@@ -17,6 +17,10 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script>
+            //redirect to specific tab
+            @include('myJSfile')
+    </script>
     
 </body>
 </html>

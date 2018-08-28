@@ -16,6 +16,21 @@
   text-align:center; font-size:25px;
 } */
 
+.view_user {
+  text-align: center;
+  text-decoration: none;
+}
+.view_user ul {
+  list-style: none;
+  margin-top: 20px;
+}
+.view_user ul li {
+  background:palegreen;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 8px;
+}
+
 html,
 body,
 img,

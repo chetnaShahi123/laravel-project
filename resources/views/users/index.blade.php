@@ -18,7 +18,7 @@ Hello {{{Auth::user()->name}}} ! <br> Welcome  to dashboard !
 
 <div role="tabpanel">
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs" role="tablist" id="tabMenu">
       @can('viewAdmin',Auth::user())
         <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Admin Panel</a></li>
         @endcan
@@ -87,6 +87,7 @@ Hello {{{Auth::user()->name}}} ! <br> Welcome  to dashboard !
             <form class="form-horizontal" method="POST" action="{{action('UserController@destroy', $user->id) }}" >
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="working_tab" value="tab1">
             <button type="submit" class="btn btn-small btn-danger">
                 Delete
             </button>
@@ -160,6 +161,7 @@ Hello {{{Auth::user()->name}}} ! <br> Welcome  to dashboard !
             <form class="form-horizontal" method="POST" action="{{action('UserController@destroy', $user->id) }}" >
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="working_tab" value="tab2">
             <button type="submit" class="btn btn-small btn-danger">
                 Delete
             </button>
@@ -193,7 +195,7 @@ Hello {{{Auth::user()->name}}} ! <br> Welcome  to dashboard !
         @endcan
 
         @if(!count($viewer_users))
-            No Admins are available!    
+            No Viewers are available!    
         @else 
         <h1>Viewer Listing</h1>
         <table class="table table-striped table-bordered">
@@ -234,6 +236,7 @@ Hello {{{Auth::user()->name}}} ! <br> Welcome  to dashboard !
             <form class="form-horizontal" method="POST" action="{{action('UserController@destroy', $user->id) }}" >
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="working_tab" value="tab3">
             <button type="submit" class="btn btn-small btn-danger">
                 Delete
             </button>
